@@ -1,7 +1,7 @@
 function enviarWhatsApp(nombre="Nombre Default", totalVentas=1000, totalCompras=1000, totalIIBB=1000, totalSueldosyCargasSociales=1000, totalOtrosGastos=1000, resultadoAlMomento=1000, gananciaOPerdida=1000, deducciones=1000, totalAPagar=1000) {
     let botId = '172592529265043';
     let phoneNbr = '541157687279';
-    let bearerToken = 'EAAUOk6srG94BO9kvliU5ZAW8VxnNApwpRRnzm4wNPEAZCuAQd877bbl7581l9xoZATZBvrGfxNeBGdScdZC1IvikGCfuE39kYLrfdUyhGKM2vJPfJXHANglNaT1hgIkeyFyclQGXNeUI76xNjIDPzZB6jn7jE8JYwmFYxGR4sA7aXZBOp4ypIlkVKZC5mOVP6XP7pkhGdDLKyZBoPJ9fvX8u5IxSgq8e0nqQQ';
+    let bearerToken = 'EAAUOk6srG94BO81fN9jZAKvUbLjop0uNZAvUkDf6ZAneeMbfVmHEAkZB0WEP4wLyZCjjymbwEtiZAUoIeZCFcPwWVYv8fZBBkdxgzWmvCKcx2PXB9oIZCosWMUyo10iBBx1GITOk5cZCEgzKB0WeHNqjtZCZCNp84947ltA5x6SQtqKeVpd3uigaCe17t0l9NZCx6YZByxfZAY0uXlt2yPAm1MBf2UGtunIZALhTZCABQnwZDZD';
 
     let url = 'https://graph.facebook.com/v15.0/' + botId + '/messages';
     let data = {
