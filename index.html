@@ -3,10 +3,23 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>BOTS VPA</title>
+    <title>Bot VPA || Proyectado de ganancias</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap" rel="stylesheet">
   </head>
   <body>
+    <header>
+      <nav class="navbar">
+          <div class="container">
+              <a class="navbar-brand" href="#">
+                  <img src="./assets/img/logo.jpg" alt="VPA" width="194" height="79">
+              </a>
+          </div>
+      </nav>
+    </header>
     <h1 class="text-center">Bienvenidos a BOTS VPA</h1>
     <div class="container-md">
         <form class="card">
@@ -44,11 +57,12 @@
               <input type="text" class="form-control" id="idTotalOtrosGastos" placeholder="Ingrese el total de Otros Gastos"> 
             </div>
 
-            <label for="idResultadoAlMomento" class="col-sm-2 col-form-label">Resultado al momento</label>
+            <label for="idResultadoAlMomento" class="col-sm-2 col-form-label">Resultado Bruto</label>
             <div class="col-sm-3 m-1">
-              <input type="text" class="form-control" id="idResultadoAlMomento" placeholder="Ingrese el Resultado al momento"> 
+              <input type="text" readonly="true" class="form-control"  id="idResultadoAlMomento" placeholder="El Resultado Bruto aparecerá aquí" > 
             </div>
 
+            <hr class="my-3"/>
             <label for="idGananciaOPerdida" class="col-sm-2 col-form-label">Ganancia / Pérdida</label>
             <div class="col-sm-3 m-1">
               <input type="text" class="form-control" id="idGananciaOPerdida" placeholder="Ingrese la Ganancia o Pérdida"> 
@@ -59,9 +73,9 @@
               <input type="text" class="form-control" id="idDeducciones" placeholder="Ingrese las deducciones"> 
             </div>
 
-            <label for="idTotalAPagar" class="col-sm-2 col-form-label">Total a Pagar</label>
+            <label for="idTotalAPagar" class="col-sm-2 col-form-label">Total a Pagar / Saldo a Favor</label>
             <div class="col-sm-3 m-1">
-              <input type="text" class="form-control" id="idTotalAPagar" placeholder="Ingrese el Total a Pagar"> 
+              <input type="text" readonly="true" class="form-control" id="idTotalAPagar" placeholder="El Total a Pagar aparecerá aquí"> 
             </div>
 
           </div>

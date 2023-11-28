@@ -139,6 +139,9 @@ function enviarWhatsApp(nombre="Nombre Default", totalVentas=1000, totalCompras=
         let deducciones = 0;
         let totalAPagar = 0;
         let elemento;
+        const claseTodoBien = "form-control text-success text-emphasis";
+        const claseTodoMal = "form-control text-danger text-emphasis";
+        const claseTodoNormal = "form-control text-primary text-emphasis";
 
         //Nombre
         elemento = document.getElementById("idNombre");
@@ -165,9 +168,13 @@ function enviarWhatsApp(nombre="Nombre Default", totalVentas=1000, totalCompras=
         elemento = document.getElementById("idTotalOtrosGastos");
         parseFloat(elemento.value) && (totalOtrosGastos = parseFloat(elemento.value));
 
-        //Resultado al Momento
+        //Resultado al Momento (Resultado Bruto)
         elemento = document.getElementById("idResultadoAlMomento");
-        parseFloat(elemento.value) && (resultadoAlMomento = parseFloat(elemento.value));
+        //parseFloat(elemento.value) && (resultadoAlMomento = parseFloat(elemento.value));
+        resultadoAlMomento = obtenerResultadoBruto();
+        elemento.value = resultadoAlMomento;
+        elemento.className = (resultadoAlMomento >= 0) ? claseTodoBien : claseTodoMal;
+        console.log("Clase Resultado bruto: " + elemento.className);
 
         //Ganancia o Pérdida
         elemento = document.getElementById("idGananciaOPerdida");
@@ -179,7 +186,12 @@ function enviarWhatsApp(nombre="Nombre Default", totalVentas=1000, totalCompras=
 
         //Total a Pagar
         elemento = document.getElementById("idTotalAPagar");
-        parseFloat(elemento.value) && (totalAPagar = parseFloat(elemento.value));
+        //parseFloat(elemento.value) && (totalAPagar = parseFloat(elemento.value));
+        totalAPagar = obtenerTotalAPagar();
+        elemento.value = totalAPagar;
+        elemento.className = (totalAPagar >= 0) ? claseTodoNormal : claseTodoBien;
+        console.log("Clase Resultado bruto: " + elemento.className);
+
 
         //Construyo el objeto datos
         datos = {
@@ -233,4 +245,60 @@ function enviarWhatsApp(nombre="Nombre Default", totalVentas=1000, totalCompras=
             gananciaOPerdida,
             deducciones,
             totalAPagar);
+    }
+
+    function obtenerResultadoBruto() {
+        let totalVentas = 0;
+        let totalCompras = 0;
+        let totalIIBB = 0;   
+        let totalSueldosyCargasSociales = 0;
+        let totalOtrosGastos = 0;
+        let resultadoBruto = 0; 
+        let elemento;
+
+        //Total Ventas
+        elemento = document.getElementById("idTotalVentas");
+        parseFloat(elemento.value) && (totalVentas = parseFloat(elemento.value));
+        
+
+        //Total Compras
+        elemento = document.getElementById("idTotalCompras");
+        parseFloat(elemento.value) && (totalCompras = parseFloat(elemento.value));
+
+        //Total IIBB
+        elemento = document.getElementById("idTotalIIBB");
+        parseFloat(elemento.value) && (totalIIBB = parseFloat(elemento.value));
+
+        //Total Sueldos y Cargas Sociales
+        elemento = document.getElementById("idTotalSueldosyCargasSociales");
+        parseFloat(elemento.value) && (totalSueldosyCargasSociales = parseFloat(elemento.value));
+
+        //Total Otros Gastos
+        elemento = document.getElementById("idTotalOtrosGastos");
+        parseFloat(elemento.value) && (totalOtrosGastos = parseFloat(elemento.value));
+
+        //Calculo
+        resultadoBruto = totalVentas - totalCompras - totalSueldosyCargasSociales - totalOtrosGastos;
+
+        return resultadoBruto;
+    }
+
+    function obtenerTotalAPagar() {
+        let gananciaOPerdida = 0;
+        let deducciones = 0;
+        let totalAPagar = 0;
+        let elemento;
+        
+        //Ganancia o Pérdida
+        elemento = document.getElementById("idGananciaOPerdida");
+        parseFloat(elemento.value) && (gananciaOPerdida = parseFloat(elemento.value));
+
+        //Deducciones
+        elemento = document.getElementById("idDeducciones");
+        parseFloat(elemento.value) && (deducciones = parseFloat(elemento.value));
+
+        totalAPagar = gananciaOPerdida - deducciones;
+
+        return totalAPagar;
+        
     }

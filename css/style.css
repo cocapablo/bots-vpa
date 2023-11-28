@@ -1,0 +1,26 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+header{
+    background-color: #e7e7e7;
+}
+
+main{
+    margin: 10px;
+}
+
+.input-group{
+    margin-bottom: 15px;
+}
+.boton{
+    display: flex; 
+    align-items: center;
+    justify-content: center;
+}
+
+h1 {
+    font-family: 'Roboto', sans-serif;
+}
