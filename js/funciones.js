@@ -116,15 +116,31 @@ function enviarWhatsApp(nombre="Nombre Default", totalVentas=1000, totalCompras=
     })
     .then(res => {
         console.log(res);
-        res.error ? alert("ERROR el enviar el mensaje\n" + res.error.message) : alert("Mensaje enviado con éxito");
-        ;
+        res.error ? 
+        Swal.fire({
+            icon: "warning",
+            title: "ERROR al enviar el mensaje",
+            text: `Se produjo el siguiente error: ${err.toString()}`
+        })
+        : 
+        Swal.fire({
+            icon: "success",
+            title: "Operación exitosa",
+            text: `El mensaje para ${nombre} fué enviado con éxito`
+        });
+        
     })
     .catch(error => {
         console.log(error);
-        alert("ERROR el enviar el mensaje\n" + error);
+        Swal.fire({
+            icon: "warning",
+            title: "ERROR al enviar el mensaje",
+            text: `Se produjo el siguiente error: ${err.toString()}`
         });
            
-    }
+    })
+}
+
 
     function obtenerDatosDelFormulario() {
         let datos = {};
