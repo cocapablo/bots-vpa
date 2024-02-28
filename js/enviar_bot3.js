@@ -1,6 +1,6 @@
 let botId = '172592529265043';
 let phoneNbr = '541157687279';
-let bearerToken = 'EAAUOk6srG94BOxZBx58xXVEPrsCrWWAVZB8CzIYdpjLjIuPzZBPJTpeWZCVEfvTOvEHaA7RZA7DZAYWadGb3dFFmG5HRboRV4sUYChcQcwBsLnyTDyMrCbbrOvitBleeuWYgTo7vh8zKApvt31fyjqiRghk1Uq0Kg615gNRliNeRtKNvDCZBSMPZAIT3vHT4nCDWnoTxSEfEKsSysQRucDs4SC5IPNAIfL8MuQZDZD';
+let bearerToken = 'EAAUOk6srG94BO66XgXUM1PUDuVYjYB5zmyvFcAoZCijvRdZBZCOAfsy02JZCw2D9Epay4qt1zoc57zczUPmZBTwtEW0v9vtd5a0JbnLdESCqT3AZAlKTALPMlupZC7zyMlaoSOMZAZA15iX7GrOSIwEpmVqXdOcX7hMUZBGnyolOHHSVoUMzRbxxqCNjlJbFdigUz6fkEZBhpuktDX9MZBNV';
 
 let url = 'https://graph.facebook.com/v15.0/' + botId + '/messages';
 let data = {
