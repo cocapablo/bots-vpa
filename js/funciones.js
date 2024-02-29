@@ -1,7 +1,9 @@
 function enviarWhatsApp(nombre="Nombre Default", totalVentas=1000, totalCompras=1000, totalIIBB=1000, totalSueldosyCargasSociales=1000, totalOtrosGastos=1000, resultadoAlMomento=1000, gananciaOPerdida=1000, deducciones=1000, totalAPagar=1000) {
     let botId = '172592529265043';
-    let phoneNbr = '541134821708';
-    let bearerToken = 'EAAUOk6srG94BO72mqKUTghx0ZBpTgOjFjnLhn7ZAlZAptgqOXENUljdErZAc7bv9qOpELISunk62JZB67b4Poqnz8rn04emHLsqQDqGe22vMnz7sfYZATWRBj5uqfmvzvZBCL5tnov25ZBy5ZB47hWwnUMjgRpv892MpAqHGi5CJAo1RtaYJQkuYZAOpJeqGEFrfR16fGM0YIHOmGjYaQr';
+    let telDamian = "541134821708";
+    let telCoca = "541157687279";
+    let phoneNbr = telDamian;
+    let bearerToken = 'EAAUOk6srG94BO87WMfkYuu0LOhi9lVYwEytVc7ZAooLZAFb4efphI00wZAqtkL4ZBKAphJ1waaSiVjVhUTmOy3R4HGmWLGddMLQbTTRKX6pQH12qz5C7URKlIzyU0gPAfsbdmqZAm77jrORAF8ZALZAKeZBVPUejSNZCiZBKMUZAOExjvpaZAXeTG8ZB52OBrQ0hhfkWDI6uKjIsnxdrmWd9t';
 
     let url = 'https://graph.facebook.com/v15.0/' + botId + '/messages';
     let data = {
@@ -115,12 +117,12 @@ function enviarWhatsApp(nombre="Nombre Default", totalVentas=1000, totalCompras=
         return data.json()
     })
     .then(res => {
-        console.log(res);
+        console.log("Respuesta :", res);
         res.error ? 
         Swal.fire({
             icon: "warning",
             title: "ERROR al enviar el mensaje",
-            text: `Se produjo el siguiente error: ${err.toString()}`
+            text: `Se produjo el siguiente error: ${res.error.message}`
         })
         : 
         Swal.fire({
@@ -135,7 +137,7 @@ function enviarWhatsApp(nombre="Nombre Default", totalVentas=1000, totalCompras=
         Swal.fire({
             icon: "warning",
             title: "ERROR al enviar el mensaje",
-            text: `Se produjo el siguiente error: ${err.toString()}`
+            text: `Se produjo el siguiente error: ${error.toString()}`
         });
            
     })
