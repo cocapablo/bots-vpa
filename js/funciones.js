@@ -3,7 +3,7 @@ function enviarWhatsApp(nombre="Nombre Default", totalVentas=1000, totalCompras=
     let telDamian = "541134821708";
     let telCoca = "541157687279";
     let phoneNbr = telDamian;
-    let bearerToken = 'EAAUOk6srG94BO87WMfkYuu0LOhi9lVYwEytVc7ZAooLZAFb4efphI00wZAqtkL4ZBKAphJ1waaSiVjVhUTmOy3R4HGmWLGddMLQbTTRKX6pQH12qz5C7URKlIzyU0gPAfsbdmqZAm77jrORAF8ZALZAKeZBVPUejSNZCiZBKMUZAOExjvpaZAXeTG8ZB52OBrQ0hhfkWDI6uKjIsnxdrmWd9t';
+    let bearerToken = 'EAAUOk6srG94BO3UuppvACTFQgS6VAwrc4MC9qRmgFiZBcnLdjh6mU9g1uMFwY1hzFFGioETIHmr8oCZAVqukWwoy5ZB8YYXqpJ8mOukA2FU0eFMc02J65GWSaAZCHBUjhxoFntwve5cHgJOwCUbiDZBlkgNUXIpzBHdhBAGpqWf4kZC6cBABepZAigC93ONAGA2z4yJPIp4wkIlAJht';
 
     let url = 'https://graph.facebook.com/v15.0/' + botId + '/messages';
     let data = {
